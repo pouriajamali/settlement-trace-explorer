@@ -2,6 +2,7 @@
 from html.parser import HTMLParser
 import hashlib
 import json
+import platform
 from pathlib import Path
 import subprocess
 import tempfile
@@ -44,6 +45,7 @@ with tempfile.TemporaryDirectory(prefix='cli-check-',dir=art) as temp:
     check(run().returncode==2)
 manifest={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(dll.parent.iterdir()) if p.is_file()}
 report=dict(schema='g2-cli-check-v1',checks=checks,failed=0,freshCwd=True,packageSha256=manifest,
-            limits='Framework-dependent net10.0 DLL on one Windows host, SDK 10.0.303. No other OS or live service validation.')
+            host=platform.platform(),dotnetVersion=subprocess.check_output(['dotnet','--version'],cwd=root,text=True).strip(),
+            limits='Framework-dependent net10.0 DLL on the host recorded here; no live service, financial effect or verifier validation.')
 (art/'cli-verification.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
 print(json.dumps(report,indent=2))
