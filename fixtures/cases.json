@@ -1,0 +1,2985 @@
+{
+  "schema": "g2-case-corpus-v1",
+  "origin": "Original synthetic data, MIT; no live transactions or private handoff content.",
+  "cases": [
+    {
+      "name": "complete-no-service",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "complete-service-success",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "reportedSucceeded",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "paid-service-failed",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "failed",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "reportedFailed",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-requestId",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-B",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-task",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "different",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-model",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "different",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-inputDigest",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-outputDigest",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-chargeAtomic",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "2",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-assetId",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-B",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-destinationChain",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 1,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "service-wrong-decimals",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 18,
+              "state": "succeeded",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "bindingMismatch",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "unsupported-proof",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "succeeded",
+              "verificationType": "zk"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "unsupportedClaim",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "unknown-service-state",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service-1",
+            "kind": "service",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "requestId": "demo-A",
+              "task": "echo",
+              "model": "synthetic-v1",
+              "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "outputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "chargeAtomic": "1000000",
+              "destinationChain": 137,
+              "assetId": "synthetic:USD-A",
+              "decimals": 6,
+              "state": "FUTURE",
+              "verificationType": "synthetic-declaration"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-DONE-PARTIAL",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "PARTIAL",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "partial",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-DONE-REFUNDED",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "REFUNDED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "refunded",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-FAILED-REFUNDED",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "FAILED",
+              "substatus": "REFUNDED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "refunded",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-PENDING-WAIT_DESTINATION_TRANSACTION",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "PENDING",
+              "substatus": "WAIT_DESTINATION_TRANSACTION",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "pending",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-FAILED-EXPIRED",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "FAILED",
+              "substatus": "EXPIRED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "failed",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-FAILED-UNKNOWN_ERROR",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "FAILED",
+              "substatus": "UNKNOWN_ERROR",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "unknown",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-DONE-NEW_ENUM",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "NEW_ENUM",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "unknown",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-NEW_ENUM-None",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "NEW_ENUM",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "unknown",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "route-NOT_FOUND-None",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "NOT_FOUND",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "unknown",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "below-minimum",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedBelowMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "zero-is-observed",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "0",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedBelowMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "missing-receiving",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "wrong-delivery-chainId",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 1,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAssetMismatch",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "wrong-delivery-address",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-B",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAssetMismatch",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "wrong-delivery-decimals",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 18
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAssetMismatch",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "above-js-safe-integer",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "9007199254740993",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "9007199254740992",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedBelowMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "uint256-maximum",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "timeout-no-observation",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "timeout-0",
+            "kind": "timeout",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "elapsedSeconds": 60
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "unknown",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "freshness-current",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "freshness-2",
+            "kind": "freshness",
+            "observedAt": "2026-11-23T10:00:02Z",
+            "native": {
+              "state": "current",
+              "height": 123,
+              "commitment": "provider-declared"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "unknown",
+        "freshness": "current",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "freshness-stale",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "freshness-2",
+            "kind": "freshness",
+            "observedAt": "2026-11-23T10:00:02Z",
+            "native": {
+              "state": "stale",
+              "height": 123,
+              "commitment": "provider-declared"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "stale",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "freshness-expired",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "freshness-2",
+            "kind": "freshness",
+            "observedAt": "2026-11-23T10:00:02Z",
+            "native": {
+              "state": "expired",
+              "height": 123,
+              "commitment": "provider-declared"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "expired",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "freshness-reorg",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "freshness-2",
+            "kind": "freshness",
+            "observedAt": "2026-11-23T10:00:02Z",
+            "native": {
+              "state": "reorg",
+              "height": 123,
+              "commitment": "provider-declared"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "reorg",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "freshness-unavailable",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "freshness-2",
+            "kind": "freshness",
+            "observedAt": "2026-11-23T10:00:02Z",
+            "native": {
+              "state": "unavailable",
+              "height": 123,
+              "commitment": "provider-declared"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unavailable",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "freshness-FUTURE",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "freshness-2",
+            "kind": "freshness",
+            "observedAt": "2026-11-23T10:00:02Z",
+            "native": {
+              "state": "FUTURE",
+              "height": 123,
+              "commitment": "provider-declared"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unknown",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "duplicate-exact",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "completed",
+        "delivery": "reportedAtLeastMinimum",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 1
+      }
+    },
+    {
+      "name": "duplicate-conflict",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "PARTIAL",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "DUPLICATE_CONFLICT"
+      }
+    },
+    {
+      "name": "new-observation-preserves-history",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "provider-1",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:01Z",
+            "native": {
+              "status": "PENDING",
+              "substatus": "WAIT_DESTINATION_TRANSACTION"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "route": "pending",
+        "delivery": "unknown",
+        "service": "unknown",
+        "freshness": "unassessed",
+        "ledger": "notIntegrated",
+        "onChainTruth": "notVerified",
+        "resend": "notAuthorized",
+        "duplicates": 0
+      }
+    },
+    {
+      "name": "out-of-order",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "provider-1",
+            "kind": "provider",
+            "observedAt": "2026-11-23T09:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "TIME_ORDER"
+      }
+    },
+    {
+      "name": "invalid-amount-1.5",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1.5",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "AMOUNT_INVALID"
+      }
+    },
+    {
+      "name": "invalid-amount-1e6",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1e6",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "AMOUNT_INVALID"
+      }
+    },
+    {
+      "name": "invalid-amount--1",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "-1",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "AMOUNT_INVALID"
+      }
+    },
+    {
+      "name": "invalid-amount-01",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "01",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "AMOUNT_INVALID"
+      }
+    },
+    {
+      "name": "invalid-amount-115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "AMOUNT_INVALID"
+      }
+    },
+    {
+      "name": "unknown-profile",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "unimplemented",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "provider",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "PROFILE_UNSUPPORTED"
+      }
+    },
+    {
+      "name": "unknown-kind",
+      "trace": {
+        "traceVersion": "1.0",
+        "profile": "lifi-status-observation-v1",
+        "intent": {
+          "requestId": "demo-A",
+          "task": "echo",
+          "model": "synthetic-v1",
+          "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "expectedOutputDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "sourceChain": 1,
+          "destinationChain": 137,
+          "assetId": "synthetic:USD-A",
+          "decimals": 6,
+          "minimumAtomic": "1000000",
+          "chargeAtomic": "1000000"
+        },
+        "events": [
+          {
+            "id": "provider-0",
+            "kind": "financial-write",
+            "observedAt": "2026-11-23T10:00:00Z",
+            "native": {
+              "status": "DONE",
+              "substatus": "COMPLETED",
+              "receiving": {
+                "amount": "1000000",
+                "chainId": 137,
+                "token": {
+                  "address": "synthetic:USD-A",
+                  "decimals": 6
+                }
+              },
+              "vendorExtra": {
+                "keep": [
+                  "native",
+                  1
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "error": "KIND_UNSUPPORTED"
+      }
+    }
+  ]
+}
