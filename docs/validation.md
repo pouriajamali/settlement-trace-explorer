@@ -1,6 +1,8 @@
 # Validation and phase status
 
-This source preview is tested on one local Windows host with installed SDK 10.0.303. No upstream baseline build, GitHub CI, Linux/macOS run, live chain operation or cryptographic verifier has been validated for this project.
+Initial local execution used one Windows host with installed SDK 10.0.303. Cross-platform evidence must name the exact successful commit and jobs in [Actions](https://github.com/pouriajamali/settlement-trace-explorer/actions/workflows/verify.yml); a workflow file alone is not evidence of execution. No upstream full-baseline build, macOS run, live chain operation or cryptographic verifier is claimed.
+
+Runtime commit [`7a08a244b34e97ffcd3a67af4534532a1d8fb935`](https://github.com/pouriajamali/settlement-trace-explorer/commit/7a08a244b34e97ffcd3a67af4534532a1d8fb935) passed [CI run 45192721629](https://github.com/pouriajamali/settlement-trace-explorer/actions/runs/45192721629): native Linux and Windows each ran 49 cases, 428 .NET assertions and 10 published-CLI/HTML checks with zero failures. Both used SDK 10.0.303. Job logs and uploaded artifact metadata were inspected; ZIP download references were returned, but those archives were not unpacked/reexecuted locally. CI artifacts expire after seven days; this is not a tagged GitHub release. Later documentation-only commits do not claim a new runtime validation.
 
 ## Reproducible local checks
 
@@ -22,7 +24,7 @@ The viewer embeds the runner's JSON as encoded text and presents the same axes. 
 | P0 | Bounded offline adapter/demo selected | No market/novelty/AI claim |
 | P1 | Contract and independent expectation corpus | External domain review remains valuable |
 | P2 | Local runner/CLI/viewer checks and fresh-DLL execution | Remote CI/release and other OS execution are separate |
-| P3 | First-profile API exists; full complement gate not passed | CMP-02 token-aware accounting/recovery adapter; versioned external consumer boundaries |
+| P3 | BLOCKED for full complement integration; first-profile read-only API exists | [Executed compatibility gate](P3-integration-gate.md); CMP-02 token-aware accounting/recovery adapter and versioned consumer boundaries |
 | P4 | Planned | Fixed real AI comparator, holdout, equal budget, time/cost/citation/error measurements; no resend/financial authority |
 | P5 | Planned | Owner-controlled accounting storage, real crash/commit/restart/duplicate/stale-worker/indexer-lag tests with oracle and DB/host limits |
 | P6 | Planned | Demand-driven second profile, migration regression and independent usage; commercial pilot evidence |
