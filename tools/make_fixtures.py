@@ -71,5 +71,5 @@ for bad in ['1.5','1e6','-1','01',str(2**256)]:
 t=trace();t['profile']='unimplemented';add('unknown-profile',t,error='PROFILE_UNSUPPORTED')
 t=trace();t['events'][0]['kind']='financial-write';add('unknown-kind',t,error='KIND_UNSUPPORTED')
 ROOT.joinpath('fixtures').mkdir(exist_ok=True)
-ROOT.joinpath('fixtures/cases.json').write_text(json.dumps(dict(schema='g2-case-corpus-v1',origin='Original synthetic data, MIT; no live transactions or private handoff content.',cases=cases),indent=2)+'\n',encoding='utf8')
+ROOT.joinpath('fixtures/cases.json').write_text(json.dumps(dict(schema='g2-case-corpus-v1',origin='Original synthetic data, MIT; no live transactions or private handoff content.',cases=cases),indent=2)+'\n',encoding='utf8',newline='\n')
 print(json.dumps(dict(cases=len(cases),valid=sum('error' not in c['expected'] for c in cases),invalid=sum('error' in c['expected'] for c in cases))))
